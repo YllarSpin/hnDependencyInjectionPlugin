@@ -20,7 +20,7 @@
         "doctrine/dbal":            "^2.13.4||^3.1.1",
         "doctrine/doctrine-bundle": ">=1.7.0",
         "doctrine/orm":             ">=2.6",
-        "symfony/symfony":          "^4.4||^5.0",
+        "symfony/symfony":          "^4.4||^5.0|^6.0",
         "symfony/symfony1":         "~1.1.27"
     },
     "require-dev": {
