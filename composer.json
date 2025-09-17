@@ -1,5 +1,5 @@
 {
-    "name":        "YllarSpin/hn-dependency-injection-plugin",
+    "name":        "yllarspin/hn-dependency-injection-plugin",
     "description": "Introduces the Symfony DI container in a Symfony 1 application.",
     "type":        "library",
     "keywords":    ["symfony", "dependency-injection", "container", "doctrine"],
