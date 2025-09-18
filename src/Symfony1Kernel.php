@@ -87,7 +87,7 @@ class Symfony1Kernel extends Kernel implements CachedKernelInterface
      *
      * @see \Symfony\Component\HttpKernel\KernelInterface::registerBundles()
      */
-    public function registerBundles(): Traversable|array
+    public function registerBundles(): \Traversable|array
     {
         return array(new DoctrineBundle());
     }
