@@ -6,6 +6,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Loader\DelegatingLoader;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Loader\LoaderResolver;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\Kernel;
@@ -57,7 +58,7 @@ class Symfony1Kernel extends Kernel implements CachedKernelInterface
     /**
      * @see \Symfony\Component\HttpKernel\Kernel::getCacheDir()
      */
-    public function getCacheDir()
+    public function getCacheDir(): string
     {
         return \sfConfig::get('sf_config_cache_dir');
     }
@@ -65,7 +66,7 @@ class Symfony1Kernel extends Kernel implements CachedKernelInterface
     /**
      * @see \Symfony\Component\HttpKernel\Kernel::getLogDir()
      */
-    public function getLogDir()
+    public function getLogDir(): string
     {
         return \sfConfig::get('sf_log_dir');
     }
@@ -96,7 +97,7 @@ class Symfony1Kernel extends Kernel implements CachedKernelInterface
      *
      * @see \Symfony\Component\HttpKernel\Kernel::getContainerLoader()
      */
-    protected function getContainerLoader(ContainerInterface $container)
+    protected function getContainerLoader(ContainerInterface $container): DelegatingLoader
     {
         $locator = new FileLocator($this->getConfigDir());
 
@@ -133,7 +134,7 @@ class Symfony1Kernel extends Kernel implements CachedKernelInterface
      *
      * @see \Symfony\Component\HttpKernel\Kernel::buildContainer()
      */
-    protected function buildContainer()
+    protected function buildContainer(): ContainerBuilder
     {
         $this->is_fresh = false;
         return parent::buildContainer();
